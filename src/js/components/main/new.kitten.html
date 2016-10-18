@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+    <form class="form-horizontal col-lg-6 col-md-6">
+      <h1 class="text-center">Add a Kitten to the Litter</h1>
+      <fieldset>
+        <div class="form-group">
+          <label for="name" class="col-lg-2 control-label">Kitten Name</label>
+          <div class="col-lg-10">
+            <input name="name" type="text" class="form-control" id="kittenName" ng-model="kittenCtrl.newKitten.name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="image" class="col-lg-2 control-label">Kitten Image</label>
+          <div class="col-lg-10">
+            <input name="image" type="text" class="form-control" id="kittenImage" ng-model="kittenCtrl.newKitten.image">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description" class="col-lg-2 control-label">Describe Your Kitten</label>
+          <div class="col-lg-10">
+            <textarea name="description"class="form-control" rows="3" id="textArea" ng-model="kittenCtrl.newKitten.description"></textarea>
+          </div>
+        </div>
+      </fieldset>
+      <button ng-click="kittenCtrl.addKitten(kittenCtrl.newKitten)" class="btn btn-primary btn-block">Add Kitten</button>
+    </form>
+    <div class="col-lg-6 col-md-6">
+      <div ng-if="kittenCtrl.newKitten.image">
+        <img class="kitten-picture text-center" ng-src="{{kittenCtrl.newKitten.image}}" alt="Kitten">
+        <h3 class="text-center">You really want to give him up?</h3>
+      </div>
+    </div>
+  </div>
+
+</div>
